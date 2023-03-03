@@ -1,0 +1,30 @@
+static void Main(string[] args)
+{
+      bool validNumber = false;
+      int inputNumber = 0;
+      int[] fibNumber = { 0, 1 };
+      int outputNumber = 1;
+
+      do
+      {
+          Console.WriteLine((validNumber) ? "Hai inserito un numero invalido o minore di uno, riprova:" : "Inserisci un numero:");
+          validNumber = Int32.TryParse(Console.ReadLine(), out inputNumber);
+          if (validNumber && inputNumber > 0)
+          {
+              Console.WriteLine("Risultato:");
+              for (int i = 1; i <= inputNumber; i++)
+              {
+                  if (i <= 1)
+                      outputNumber = i;
+                  else
+                  {
+                      outputNumber = fibNumber.Sum();
+                      fibNumber[0] = fibNumber[1];
+                      fibNumber[1] = outputNumber;
+                  }
+                  Console.Write(outputNumber + "  ");
+              }
+          }
+      }
+      while (inputNumber < 1);
+}
