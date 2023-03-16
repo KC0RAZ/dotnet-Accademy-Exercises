@@ -15,7 +15,9 @@ static void Main(string[] args)
               for (int i = 1; i <= inputNumber; i++)
               {
                   if (i <= 1)
+                  {
                       outputNumber = i;
+                  }
                   else
                   {
                       outputNumber = fibNumber.Sum();
